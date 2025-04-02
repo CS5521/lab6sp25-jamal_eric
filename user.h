@@ -25,6 +25,8 @@ int sleep(int);
 int uptime(void);
 // added hw to file
 int hw(void);
+// added fkc
+int fkc(void);
 
 // ulib.c
 int stat(const char*, struct stat*);

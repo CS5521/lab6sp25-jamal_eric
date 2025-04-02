@@ -7,6 +7,7 @@
 #include "x86.h"
 #include "syscall.h"
 
+
 // User code makes a system call with INT T_SYSCALL.
 // System call number in %eax.
 // Arguments on the stack, from the user call to the C
@@ -107,6 +108,9 @@ extern int sys_uptime(void);
 // adding in a new system call
 extern int sys_hw(void);
 
+// adding fkc system call
+extern int sys_fkc(void);
+
 static int (*syscalls[])(void) = {
 [SYS_fork]    sys_fork,
 [SYS_exit]    sys_exit,
@@ -131,6 +135,8 @@ static int (*syscalls[])(void) = {
 [SYS_close]   sys_close,
 // new sys call
 [SYS_hw]      sys_hw,
+// new sys call
+[SYS_fkc]     sys_fkc,
 };
 
 void
