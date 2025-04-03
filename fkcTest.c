@@ -17,14 +17,14 @@ main(int argc, char * argv[])
    printf(1, "number of forks after fork count cleared: %d\n", fkc(1));
 
    if (fork() == 0) exit();
-    if (fork() == 0) exit();
-    if (fork() == 0) exit();
-    wait();
-    wait();
-    wait();
+   if (fork() == 0) exit();
+   if (fork() == 0) exit();
+   wait();
+   wait();
+   wait();
 
-    printf(1, "number of forks after three more forks: %d\n", fkc(1));
+   printf(1, "number of forks after three more forks: %d\n", fkc(1));
     
-    exit();
+   exit();
 
 }
