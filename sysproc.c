@@ -103,5 +103,15 @@ sys_hw(void)
 
 // added fkc function
 int sys_fkc(void) {
+  int n;
+
+  if(argint(0, &n) < 0) {
+    return -1;
+  } 
+  if (n == 0) {
+    fork_counter = 0;
+    return 0;
+  }
+
   return fork_counter;
 }
